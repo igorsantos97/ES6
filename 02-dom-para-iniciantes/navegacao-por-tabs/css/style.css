@@ -227,3 +227,27 @@ body {
     margin-bottom: 0;
   }
 }
+
+.js .js-tabmenu li {
+  cursor: pointer;
+}
+
+.js .js-tabcontent section {
+  display: none;
+}
+
+.js .js-tabcontent section.ativo {
+  display: block;
+  animation: show 0.5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}
