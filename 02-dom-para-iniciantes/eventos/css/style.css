@@ -12,6 +12,14 @@ dl {
   padding: 0;
 }
 
+.azul {
+  background: teal;
+}
+
+.largeText {
+  font-size: 120%;
+}
+
 img {
   display: block;
   max-width: 100%;
