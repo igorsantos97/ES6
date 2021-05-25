@@ -8,9 +8,9 @@ const primeiraComida = comidas.shift(); // Pizza
 const ultimaComida = comidas.pop(); // Macarrão
 
 comidas.push('Arroz');
-comidas.unshift('Peixe');
+comidas.unshift('Peixe', 'Batata');
 
-console.log(comidas); // (4) ["Peixe", "Frango", "Carne", "Arroz"]
+console.log(comidas); // (4) ["Peixe", "Batata",  "Frango", "Carne", "Arroz"]
 
 const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 // Arrume os estudantes em ordem alfabética
