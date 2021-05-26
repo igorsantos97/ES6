@@ -11,20 +11,20 @@ function constroiObjCurso(cursoElement) {
   const horas = cursoElement.querySelector('span.horas').innerText;
 
   return {
-    titulo: titulo,
-    paragrafo: paragrafo,
-    aulas: aulas,
-    horas: horas,
+    titulo,
+    paragrafo,
+    aulas,
+    horas,
   };
 }
 
-const objCursos = arrayCursos.reduce((acc, curso, index) => {
+const objCursos = arrayCursos.map((curso) => {
   const resultObjCurso = constroiObjCurso(curso);
 
-  acc[index] = resultObjCurso;
+  return resultObjCurso;
+});
 
-  return acc;
-}, []);
+console.log(objCursos);
 
 // Retorne uma lista com os
 // números maiores que 100
@@ -75,8 +75,6 @@ const compras = [
 
 const totalCompra = compras.reduce((acc, compra) => {
   const precoLimpo = +compra.preco.replace('R$ ', '').replace(',', '.');
-
-  console.log(acc, precoLimpo);
 
   return acc + precoLimpo;
 }, 0);
