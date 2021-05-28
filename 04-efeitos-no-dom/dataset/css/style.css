@@ -1,3 +1,8 @@
+[data-cor^='azul'] {
+  background: blue;
+  color: #faf6ed;
+}
+
 body,
 h1,
 h2,
@@ -228,48 +233,67 @@ body {
   }
 }
 
-.js .js-tabmenu li {
+.js [data-tab='menu'] li {
   cursor: pointer;
 }
 
-.js .js-tabcontent section {
+.js [data-tab='content'] section {
   display: none;
 }
 
-.js .js-tabcontent section.ativo {
+.js [data-tab='content'] section.ativo {
   display: block;
   animation: show 0.5s forwards;
 }
 
-@keyframes show {
+.js [data-tab='content'] section.ativo.show-down {
+  animation: showDown 0.5s forwards;
+}
+
+.js [data-tab='content'] section.ativo.show-right {
+  animation: showRight 0.5s forwards;
+}
+
+@keyframes showDown {
   from {
     opacity: 0;
-    transform: translate3d(-30px, 0, 0);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0px, 0, 0);
+    transform: translateY(0px);
   }
 }
 
-.js .js-accordion dt {
+@keyframes showRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.js [data-anime='accordion'] dt {
   cursor: pointer;
 }
 
-.js .js-accordion dt::after {
+.js [data-anime='accordion'] dt::after {
   content: '⬎';
   margin-left: 10px;
 }
 
-.js .js-accordion dt.ativo::after {
+.js [data-anime='accordion'] dt.ativo::after {
   content: '⬏';
 }
 
-.js .js-accordion dd {
+.js [data-anime='accordion'] dd {
   display: none;
 }
 
-.js .js-accordion dd.ativo {
+.js [data-anime='accordion'] dd.ativo {
   display: block;
   animation: slideDown 0.5s forwards;
 }
@@ -285,13 +309,17 @@ body {
   }
 }
 
-.js .js-scroll {
+.js [data-anime='scroll'] {
   opacity: 0;
   transition: 0.3s;
   transform: translateX(-30px);
 }
 
-.js .js-scroll.ativo {
+.js [data-anime='scroll'].ativo {
   opacity: 1;
   transform: translateX(0px);
+}
+
+.show-down {
+  animation: showDown 0.5s forwards;
 }
