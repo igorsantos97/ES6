@@ -34,7 +34,6 @@ export default function initTooltip() {
     toolipBox.innerText = text;
 
     document.body.appendChild(toolipBox);
-    console.log(toolipBox);
 
     return toolipBox;
   }
